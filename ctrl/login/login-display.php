@@ -1,4 +1,5 @@
 <?php
 
 
-include $_SERVER['DOCUMENT_ROOT'] . '/view/login-display.php';
+
+include $_SERVER['DOCUMENT_ROOT'] . '/view/login/login-display.php';

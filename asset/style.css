@@ -1,0 +1,74 @@
+*{margin: 0;
+padding: 0;
+}
+h2 {
+    padding: 16px;
+    text-align: center;
+    margin-top: 50px;
+    letter-spacing: 5px;
+    font-family: Arial, sans-serif;
+}
+
+/* Style du formulaire */
+form {
+    max-width: 400px;
+    /* margin: 0 auto; */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    margin: auto;
+    margin-top: 20px;
+    height: 250px;
+}
+
+/* Style des étiquettes */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}j
+
+/* Style des champs de texte */
+form input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style des champs de texte */
+form input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style du bouton */
+form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 30px;
+}
+
+
+form button:hover {
+    background-color: #2e5830;
+}
+
+form>div>select {
+    margin-top: 5px;
+    height: 25px;
+    width: 100px;
+    margin-bottom: 20px;
+}
