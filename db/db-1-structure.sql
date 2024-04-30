@@ -1,9 +1,9 @@
 -- - Supprime la base de données si elle existe déjà
 -- - Crée la base de données
 -- - Mentionne le nom de la base de données à utiliser pour exécuter les commandes SQL qui suivent
-DROP DATABASE IF EXISTS `430-php-login-YAO`;
-CREATE DATABASE IF NOT EXISTS `430-php-login-YAO`;
-USE `430-php-login-YAO`;
+DROP DATABASE IF EXISTS `430-php-login`;
+CREATE DATABASE IF NOT EXISTS `430-php-login`;
+USE `430-php-login`;
 
 -- -------------
 -- TABLES

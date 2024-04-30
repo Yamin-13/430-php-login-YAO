@@ -9,7 +9,7 @@
 <body>
     <main>
         <header><h2>Identifiez-vous</h2></header>
-        <form action="../ctrl/login.php" method="post">
+        <form action="/ctrl/login/login.php" method="post">
             <!-- E-mail -->
             <div>
                 <label for="code">E-mail :</label>

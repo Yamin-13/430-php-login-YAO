@@ -2,8 +2,13 @@
 
 // Paramètres de connexion à la BDD
 $dbConfig[] = [];
-$dbConfig['host'] = '127.0.0.1';
+// $dbConfig['host'] = '127.0.0.1';
 $dbConfig['port'] = '4000';
 $dbConfig['dbname'] = '430-php-login-YAO';
 $dbConfig['user'] = 'root';
 $dbConfig['password'] = '';
+
+// Paramètres de connexion à la BDD
+class ConfigDb{
+    const HOST = '127.0.0.1';
+}
