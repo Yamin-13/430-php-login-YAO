@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/asset/style.css">
+    <title><?= $titrePage ?></title>
 </head>
+
 <body>
-    <h2>welcome!!!!</h2>
+    <?php
+    include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
+    <h2 class="welcome">Welcome!!!!</h2>
+    <main>
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="/asset/img/roseFlower.mp4" type="video/mp4">
+            
+        </video>
+    </main>
+
 </body>
+
 </html>
