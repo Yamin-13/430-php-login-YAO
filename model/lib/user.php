@@ -9,21 +9,23 @@
  * @return boolean Succès ou échec. 
  * 
  */
-function getUser(string $email, string $password, PDO $db): array
+function getUser(string $email, string $password, PDO $db)
 {
     // - Prépare la requête
     $query = 'SELECT user.id, user.email, user.password, user.idRole';
     $query .= ' FROM user';
-    $query .= ' WHERE ';
-    $query .= ' user.email = :email';
-    $query .= ' ,user.password = :password';
+    // $query .= ' WHERE ';
+    // $query .= ' user.email = :email';
+    $query .= ' WHERE user.email = :email AND user.password = :password ';
+    // $query .= ' ,user.password = :password';
     $statement = $db->prepare($query);
     $statement->bindParam(':email', $email);
     $statement->bindParam(':password', $password);
   
     // - Exécute la requête
-    $successOrFailure = $statement->execute();
-    $user = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-    return $user;
+    $statement->execute();
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+   
+    // Ca retourne null si aucun utilisatet est trouvé
+    return $user ? $user : null;
 }
