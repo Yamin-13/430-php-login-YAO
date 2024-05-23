@@ -2,13 +2,13 @@
 USE `430-php-login`;
 
 INSERT INTO role (id, code, label ) VALUES
-     (10, 'V', 'Visa')
-    ,(20, 'MS', 'MasterCard')
+     (10, 'A', 'Admin')
+    ,(20, 'NLU', 'noLogUser')
 ;
 
 INSERT INTO user (id, idRole, password, email) VALUES
-     (80, 20, '1234', 'Bonaparte@gmail.com')
-    ,(90, 20, 'azer', 'MonteCinto@gmail.com')
-    ,(100, 20, 'qsdf', 'PagliaOrba@gmail.com')
-    ,(110, 10, 'wxcv', 'StenaCarrier@gmail.com')
+     (80, 20, 'toto', 'toto@gmail.com')
+    ,(90, 20, 'tata', 'tata@gmail.com')
+    ,(100, 20, 'titi', 'titi@gmail.com')
+    ,(110, 10, 'bob', 'bob@gmail.com')
 ;

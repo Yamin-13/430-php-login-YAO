@@ -1,24 +1,29 @@
 <?php
 
 /**
- * Retourne une connexion à la base de données.
+ * user.
  * 
- * @param array $params Paramètres de connexion (host, port, ...)
+ * @param string E-mail e-mail.
+ * @param string password, corse de préférence.
+ * @param PDO db Connexion à la BDD.
+ * @return boolean Succès ou échec. 
  * 
- * @return PDO Connexion à la base.
  */
-function getConnection(array $params) : PDO
+function getUser(string $email, string $password, PDO $db): array
 {
-    $dataSourceName = 'mysql:host=' . ConfigDb::HOST . ';port=' . $params['port'] . ';dbname=' . $params['dbname'];
-    $connection = new PDO($dataSourceName, $params['user'], $params['password']);
+    // - Prépare la requête
+    $query = 'SELECT user.id, user.email, user.password, user.idRole';
+    $query .= ' FROM user';
+    $query .= ' WHERE ';
+    $query .= ' user.email = :email';
+    $query .= ' ,user.password = :password';
+    $statement = $db->prepare($query);
+    $statement->bindParam(':email', $email);
+    $statement->bindParam(':password', $password);
+  
+    // - Exécute la requête
+    $successOrFailure = $statement->execute();
+    $user = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    // Configure la connexion pour afficher toutes les erreurs (quand il y en a)
-    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    return $connection;
+    return $user;
 }
-function getUser($email, $password) {
-    
-    // (＃｀д´)ﾉ 彡┻━┻ 
-}
-
