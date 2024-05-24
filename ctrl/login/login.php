@@ -3,7 +3,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/cfg/db.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/model/lib/user.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/model/lib/db.php';
-session_start();
+session_start(); // ca initialise une session et permet à $_SESSION de fonctionner (de stocker) 
 // ca récupére les informations d'identification du formulaire envoyé par POST
 $user = [];
 $user['mail'] = $_POST['mail'];
@@ -38,3 +38,7 @@ if ($userData !== null) {  // !== c'est l'opérateur strict pour vérifié si us
 }
 
 
+// test=============================
+
+
+// echo password_hash("toto", PASSWORD_DEFAULT);
