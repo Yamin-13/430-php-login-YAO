@@ -12,7 +12,7 @@
 <h2 class="welcome">Secrets Trouvés!!!!</h2>
     <main>
         <video autoplay muted loop playsinline id="bg-video">
-            <source src="/asset/img/roseFlower.mp4" type="video/mp4">
+            <source src="/asset/img/eurosBillet.mp4" type="video/mp4">
             
         </video>
     </main>

@@ -10,7 +10,7 @@ INSERT INTO user (id, idRole, password, email) VALUES
      (80, 20, 'toto', 'tata')
     ,(90, 20, 'tata', 'tata@live.fr')
     ,(100, 20, 'titi', 'titi@live.fr')
-    ,(110, 10, 'bob', 'bob@live.fr')
+    ,(110, 10, 'bob', 'bob')
 ;
 
 SELECT user.email, role.code
