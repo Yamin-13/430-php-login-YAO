@@ -5,7 +5,7 @@
                 <li><a href="/ctrl/login/display.php">Accueil</a></li>
                 <li><a href="#">Produits</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">À propos</a></li>
+                <li><a href="/ctrl/login/secret.php">Nos Secrets</a></li>
             </ul>
         </nav>
     </header>

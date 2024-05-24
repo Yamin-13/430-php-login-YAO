@@ -9,8 +9,7 @@
 </head>
 
 <body>
-    <?php
-    include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
     <main>
         <div class="formulaire">
             <div class="wrapper">
@@ -39,14 +38,14 @@
                         </div>
 
                         <div class="error-message">
-                    <?php
-                    session_start(); // ca initialise une session et la stock ou la reprend si elle existe déja dans les cookies. c'est grace à cette fonction qu'on peut utiliser la variable session
-                    if (isset($_SESSION['error'])) { // isset verifie si ($_SESSION['error']) est pas null
-                        echo '<p class= "error-message">' . $_SESSION['error'] . '</p>';
-                        unset($_SESSION['error']); // unset ca retire ($_SESSION['error']) de la session pour supprimer le message d'érreur
-                    }
-                    ?>
-                </div>
+                            <?php
+                            session_start(); // ca initialise une session et la stock ou la reprend si elle existe déja dans les cookies. c'est grace à cette fonction qu'on peut utiliser la variable session
+                            if (isset($_SESSION['error'])) { // isset verifie si ($_SESSION['error']) est pas null
+                                echo '<p class= "error-message">' . $_SESSION['error'] . '</p>';
+                                unset($_SESSION['error']); // unset ca retire ($_SESSION['error']) de la session pour supprimer le message d'érreur
+                            }
+                            ?>
+                        </div>
 
                     </form>
                 </div>
