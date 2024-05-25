@@ -18,7 +18,7 @@ CREATE TABLE role (
 
 CREATE TABLE user (
    id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY
-  ,password varchar(50) NOT NULL
+  ,password varchar(100) NOT NULL
   ,email varchar(50) NOT NULL
   ,idRole bigint(20) NOT NULL
 )

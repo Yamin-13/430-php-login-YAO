@@ -16,16 +16,38 @@ function getUser(string $email, string $password, PDO $db)
     $query .= ' FROM user';
     // $query .= ' WHERE ';
     // $query .= ' user.email = :email';
-    $query .= ' WHERE user.email = :email AND user.password = :password ';
+    $query .= ' WHERE user.email = :email ';
     // $query .= ' ,user.password = :password';
     $statement = $db->prepare($query);
     $statement->bindParam(':email', $email);
-    $statement->bindParam(':password', $password);
-  
+    // $statement->bindParam(':password', $password);
+
     // - Exécute la requête
     $statement->execute();
     $user = $statement->fetch(PDO::FETCH_ASSOC);
-   
-    // Ca retourne null si aucun utilisatet est trouvé
-    return $user ? $user : null;
+
+    // test=======================================================
+    // var_dump($user);
+    // var_dump($password);
+    // var_dump($user['password']);
+    // var_dump(password_verify($password, $user['password']));
+    // exit();
+
+    // var_dump($user);
+    // var_dump($password);
+    // var_dump($user['password']);
+    // var_dump(password_verify($password, $user['password']));
+    // exit();
+    // ============================================================
+
+    // conditions pour verifier le password hashé correspond. "password_verify" retourne true ou false si le mot de passe fourni correspond au haché stocké
+    if ($user && password_verify($password, $user['password'])) {  // $password c'st le mot de passe en clair fournis, $user['password'] c'est le mot de passe haché de la BDD
+       
+        // Si les deux conditions sont vraies (l'utilisateur existe et le mot de passe est correct)...
+        // ... alors la fonction retourne les données de l'utilisateur 
+        return $user;
+    } else {
+        // Ca retourne null si les conditios sont false
+        return null;
+    }
 }
