@@ -35,6 +35,14 @@ if ($userData !== null) {  // !== c'est l'opérateur strict pour vérifié si us
     exit();
 }
 
+// Vérifie si l'utilisateur est authentifié
+if (!isset($_SESSION['user'])) {
+    // Redirige vers la page de connexion si l'utilisateur n'est pas authentifié
+    header('Location: /ctrl/login/display.php');
+    exit();
+}
+
+
 
 // ==============TEST (pour les galères)=============================
 
