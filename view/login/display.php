@@ -11,8 +11,8 @@
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
     <main>
-        <div class="formulaire">
-            <div class="wrapper">
+        <div class="formulaire" id="profileForm">
+            <div class="wrapper" id="wrapperAll">
                 <img src="/asset/img/dahlia.png" alt="">
                 <h2 class="text-right">Bienvenue</h2>
                 <div class="form-wrapper login">
@@ -77,11 +77,10 @@
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </main>
-    <script src="/asset/scipt.js"></script>
+    <script src="/asset/script/wrapper.js"></script>
 </body>
 
 </html>

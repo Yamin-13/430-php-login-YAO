@@ -7,3 +7,6 @@ function registerActive() {
 function loginActive() {
     wrapper.classList.toggle('active');
 }
+
+
+
