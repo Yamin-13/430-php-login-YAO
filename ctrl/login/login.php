@@ -5,6 +5,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/model/lib/user.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/model/lib/db.php';
 session_start(); // ca initialise une session et permet à $_SESSION de fonctionner (de stocker dans les coockies) 
 
+// vérifie si le formulaire de connexion a été soumis
+if (isset($_POST['email']) && isset($_POST['password'])) {
+
 // ca récupére les informations d'identification du formulaire envoyé par POST
 $user = [];
 $user['email'] = $_POST['email'];
@@ -34,13 +37,22 @@ if ($userData !== null) {  // !== c'est l'opérateur strict pour vérifié si us
     header('Location: /ctrl/login/display.php');
     exit();
 }
-
-// Vérifie si l'utilisateur est authentifié
-if (!isset($_SESSION['user'])) {
-    // Redirige vers la page de connexion si l'utilisateur n'est pas authentifié
+} else {
+    // aussi ca redirige vers la page de login si les informations d'identification ne sont pas fournies avec un message d'érreur
+    $_SESSION['error'] = 'Veuillez entrer votre email et mot de passe.';
     header('Location: /ctrl/login/display.php');
     exit();
 }
+
+
+
+
+// Vérifie si l'utilisateur est authentifié
+// if (!isset($_SESSION['user'])) {
+//     // Redirige vers la page de connexion si l'utilisateur n'est pas authentifié
+//     header('Location: /ctrl/login/display.php');
+//     exit();
+// }
 
 
 
@@ -51,8 +63,7 @@ $password = 'moi';
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 echo $hashedPassword;
 
-
-//  vérifie connexion a la bdd
+//  vérifie connexion a la bdd==========
 // if ($dbConnection) {
 //     echo 'bdd ok';
 // } else {
@@ -60,21 +71,22 @@ echo $hashedPassword;
 //     exit();
 // }
 
-// test la variable si elle est NULL
+// test la variable si elle est NULL============
 // var_dump($userData); 
 // exit();
 
-// affichage
+// affichage=============
 // echo 'mp envoyé ' . $user['password'];
 // echo 'password ' . $userData['password'];
 
-
+// ===================================
 // if ($userData && password_verify($user['password'], $userData['password'])) {
 //     echo 'mp ok';
 // } else {
 //     echo 'mp pas ok';
 // }
 
+// test la verification du mp hashé ======================================
 // $hashedPassword = '$2y$10$WtP7iEn21/GM.0ItubQciuByeJk6LNDXdRNQvLMtN5KlqH4rOmkpq'; 
 // $password = 'moi'; 
 // if (password_verify($password, $hashedPassword)) {
