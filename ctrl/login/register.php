@@ -15,7 +15,7 @@ $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 // var_dump($password); // Mp en clair
 // var_dump($hashedPassword); // Mp haché
 
-$idRole = 20; // ca donne un role pour les nouveaux utilisateurs (20)
+$idRole = 20; // ca donne un role pour les nouveaux utilisateurs (sampleUser)
 
 // se connecte à la base de données
 $dbConnection = getConnection($dbConfig);

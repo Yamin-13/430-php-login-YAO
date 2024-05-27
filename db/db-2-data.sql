@@ -2,8 +2,8 @@
 USE `430-php-login`;
 
 INSERT INTO role (id, code, label ) VALUES
-     (10, 'A', 'Admin')
-    ,(20, 'NLU', 'noLogUser')
+     (10, 'ADM', 'Admin')
+    ,(20, 'SUSR', 'SampleUser')
 ;
 
 INSERT INTO user (id, idRole, password, email) VALUES
