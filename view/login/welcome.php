@@ -11,7 +11,7 @@
 <body>
     <?php
     include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
-    <h2 class="welcome">Welcome, <?=($_SESSION['user']['email']) ?>!!!!</h2>
+    <h2 class="welcome">Welcome, <?= ($_SESSION['user']['email']) ?>!!!!</h2>
     <main>
         <video autoplay muted loop playsinline id="bg-video">
             <source src="/asset/img/roseFlower.mp4" type="video/mp4">

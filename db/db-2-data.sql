@@ -7,9 +7,9 @@ INSERT INTO role (id, code, label ) VALUES
 ;
 
 INSERT INTO user (id, idRole, password, email) VALUES
-     (80, 20, 'toto', 'toto@live.fr')
-    ,(90, 20, 'tata', 'tata@live.fr')
-    ,(100, 20, 'titi', 'titi@live.fr')
+     (80, 20, 'toto', 'toto@a.fr')
+    ,(90, 20, 'tata', 'tata@a.fr')
+    ,(100, 20, 'titi', 'titi@a.fr')
     ,(110, 10, 'bob', 'bob')
 ;
 
