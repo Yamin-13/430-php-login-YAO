@@ -10,7 +10,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 // ...et hache le mot de passe
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+$hashedPassword = password_hash($password, PASSWORD_BCRYPT ); // PASSWORD_BCRYPT ca utilise l'algorithme Blowfish qui est plus sécurisé (survole de la documentation...)
 
 // var_dump($password); // Mp en clair
 // var_dump($hashedPassword); // Mp haché
