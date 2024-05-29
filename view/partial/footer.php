@@ -26,7 +26,7 @@
     <?php unset($_SESSION['msg']) ?>
 
     <ul>
-        <li>TEST-PHP-UPLOAD-FILE-BDD</li>
+        <li class="footerTitle">Fleur de Dahlia - 2024</li>
     </ul>
 </footer>
 </body>
