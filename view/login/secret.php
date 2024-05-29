@@ -17,6 +17,7 @@
             <source src="/asset/img/eurosBillet.mp4" type="video/mp4">
         </video>
     </main>
+
 </body>
 
 </html>

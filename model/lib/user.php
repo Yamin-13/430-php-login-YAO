@@ -4,7 +4,7 @@
  * user.
  * 
  * @param string E-mail e-mail.
- * @param string password, corse de préférence.
+ * @param string password
  * @param PDO db Connexion à la BDD.
  * @return boolean Succès ou échec. 
  * 
@@ -14,13 +14,9 @@ function getUser(string $email, string $password, PDO $db)
     // - Prépare la requête
     $query = 'SELECT user.id, user.email, user.password, user.idRole';
     $query .= ' FROM user';
-    // $query .= ' WHERE ';
-    // $query .= ' user.email = :email';
     $query .= ' WHERE user.email = :email ';
-    // $query .= ' ,user.password = :password';
     $statement = $db->prepare($query);
     $statement->bindParam(':email', $email);
-    // $statement->bindParam(':password', $password);
 
     // - Exécute la requête
     $statement->execute();
@@ -42,7 +38,7 @@ function getUser(string $email, string $password, PDO $db)
 
     // conditions pour verifier le password hashé correspond. "password_verify" retourne true ou false si le mot de passe fourni correspond au haché stocké
     if ($user && password_verify($password, $user['password'])) {  // $password c'st le mot de passe en clair fournis, $user['password'] c'est le mot de passe haché de la BDD
-       
+
         // Si les deux conditions sont vraies (l'utilisateur existe et le mot de passe est correct)...
         // ... alors la fonction retourne les données de l'utilisateur 
         return $user;

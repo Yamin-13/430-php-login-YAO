@@ -100,7 +100,7 @@ header nav ul li a:hover {
 .profile-icon img {
     width: 50px;
     height: 50px;
-    transform: scale(1.5); 
+    transform: scale(1.5);
 }
 
 /* =================================================================== */
@@ -264,4 +264,67 @@ button {
 
 .sign-link p a:hover {
     text-decoration: underline;
+}
+
+footer {
+    padding: 16px;
+    background-color: #54880e;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 50px;
+
+    ul {
+        display: flex;
+        width: 100%;
+
+
+        li {
+            list-style: none;
+
+        }
+
+        li.spacer {
+            flex-grow: 1;
+
+        }
+
+    }
+}
+
+#listMessage {
+    color: rgb(85, 8, 8);
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile-label {
+    font-size: 1em;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(145deg, #6cbf40, #4a8e2e);
+    box-shadow: 4px 4px 8px #467a28, -4px -4px 8px #72d148;
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.inputfile-label:hover {
+    background: linear-gradient(145deg, #4a8e2e, #6cbf40);
+    box-shadow: 2px 2px 4px #467a28, -2px -2px 4px #72d148;
+}
+
+.file-name {
+    font-size: 0.9em;
+    margin-left: 10px;
+    color: white;
 }

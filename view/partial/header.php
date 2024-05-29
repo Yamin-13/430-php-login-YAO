@@ -8,9 +8,15 @@ $isLoggedIn = isset($_SESSION['user']); ?>
         <ul>
             <li><a href="#">Accueil</a></li>
             <li><a href="/ctrl/login/welcome.php">Welcome</a></li>
-            <li><a href="#">Nos Produits</a></li>
-            <?php if ($isLoggedIn && $_SESSION['user']['idRole'] == '10') : ?> <!-- cache le lien Nos secret si l'utilisateur n'a pas le role admin -->
-                <li><a href="/ctrl/login/secret.php">Nos Secrets</a></li>
+           <li><a href="#">Nos Produits</a></li>
+           <?php if ($isLoggedIn) : ?> <!-- cache le lien si l'utilisateur n'est pas log -->
+                <li><a href="/ctrl/profile/profile.php">Profile</a></li>
+            <?php endif; ?>
+            <?php if ($isLoggedIn) : ?> <!-- cache le lien si l'utilisateur n'est pas log -->
+                <li><a href="/ctrl/profile/profile-add-display.php">Profile +</a></li>
+            <?php endif; ?>
+           <?php if ($isLoggedIn && $_SESSION['user']['idRole'] == '10') : ?> <!-- cache le lien Nos secret si l'utilisateur n'a pas le role admin -->
+                <li><a href="/ctrl/login/secret.php">Secrets</a></li>
             <?php endif; ?>
         </ul>
     </nav>
