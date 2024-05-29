@@ -9,16 +9,16 @@ session_start(); // ca initialise une session et permet à $_SESSION de fonction
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
 // ca récupére les informations d'identification du formulaire envoyé par POST
-$user = [];
-$user['email'] = $_POST['email'];
-$user['password'] = $_POST['password'];
+$form = [];
+$form['email'] = $_POST['email'];
+$form['password'] = $_POST['password'];
 
 // ca se connecte à la base de données avec ces parametres
 $dbConnection = getConnection($dbConfig);
 
 // la fonction getUser retourne un tableau ou false. et le résultat est stocké dans UserDAta avec
 // les informations d'identification et la connexion à la base de données ($dbConnection)
-$userData = getUser($user['email'], $user['password'], $dbConnection);
+$userData = getUser($form['email'], $form['password'], $dbConnection);
 
 
 // Pour vérifier les informations d'identification
