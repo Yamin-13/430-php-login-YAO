@@ -60,17 +60,23 @@
                 </div>
 
                 <div class="form-wrapper register">
-                    <form action="/ctrl/login/register.php" method="post">
+                    <form action="/ctrl/login/register.php" method="post" enctype="multipart/form-data">
                         <h2>Inscription</h2>
-                        <div class="input-box">
+                        <!-- <div class="input-box">
                             <input type="text" placeholder="Nom prénom">
-                        </div>
+                        </div> -->
                         <div class="input-box">
                             <input type="text" name="email" placeholder="Email" required>
                         </div>
                         <div class="input-box">
                             <input type="password" name="password" placeholder="Mot de Passe" required>
                         </div>
+                        <div class="input-box">
+                            <input type="file" id="file" name="file" class="inputfile" onchange="updateFileName()">
+                            <label for="file" class="inputfile-label">Votre avatar</label>
+                            <span id="file-name" class="file-name">Aucun fichier sélectionné</span>
+                        </div>
+                        <script>updateFileName()</script>
                         <button type="submit">Inscription</button>
                         <div class="sign-link">
                             <p>Déjà Inscrits? <a href="#" onclick="loginActive()">S'Identifier</a></p>
@@ -80,6 +86,7 @@
             </div>
         </div>
     </main>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/footer.php'; ?>
     <script src="/asset/script/wrapper.js"></script>
 </body>
 
