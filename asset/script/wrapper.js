@@ -9,23 +9,12 @@ function loginActive() {
 }
 
 
-function updateFileName() {
-    let input = document.getElementById('file');              //  ca Récupère l'élément input...
-    let fileNameSpan = document.getElementById('file-name'); //  ...de type file par son id
-    let maxLength = 10; // nombre maximum de caractères a affiché
-   
-    if (input.files.length > 0) { // vérifie si l'utilisateur a sélectioné au moins un fichier
-        fileNameSpan.textContent = input.files[0].name; // si un fichier est sélectionné ca met à jour le texte... 
-                                                        // ...du span avec le nom du premier fichier sélectionné (0) 
-    } else {
-        fileNameSpan.textContent = 'Aucun fichier sélectionné'; // si y'a aucun fichier sélectionné affiche le message
-    }
-}
+
 
 function updateFileName() {
     let input = document.getElementById('file');              //  ca Récupère l'élément input...
     let fileNameSpan = document.getElementById('file-name'); // ...de type file par son id
-    let maxLength = 20; // nombre maximum de caractères à afficher
+    let maxLength = 15; // nombre maximum de caractères à afficher
 
     if (input.files.length > 0) { // vérifie si l'utilisateur a sélectioné au moins un fichier
         let fileName = input.files[0].name;// si un fichier est sélectionné ca met à jour le texte... 
