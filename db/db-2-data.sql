@@ -10,7 +10,7 @@ INSERT INTO user (id, idRole, password, email) VALUES
      (80, 20, 'toto', 'toto@a.fr')
     ,(90, 20, 'tata', 'tata@a.fr')
     ,(100, 20, 'titi', 'titi@a.fr')
-    ,(110, 10, 'bob', 'bob')
+    ,(110, 10, 'bob', 'bob')   ---> mot de passe de bob l'admin hashé : $2y$10$eO1EhZvLXRmyfB4f0tl1pe/oxTmMQJeJGblfWYSHAi.KJtNfAOm9W
 ;
 
 SELECT user.email, role.code
