@@ -8,13 +8,14 @@
 </head>
 <body>
 <main>
-    <form action="/ctrl/profile/profil" method="post" enctype="multipart/form-data">
+    <form action="/ctrl/profile/profile.php" method="post" enctype="multipart/form-data">
 
         <!-- fichier à 'uploader' -->
         <div>
             <label for="file">Fichier d'avatar</label>
-            <input type="file" id="file" name="file">
+            <input type="file" id="file" name="file"  accept="image/*" >
         </div>
+        <img style="border-radius: 8%;" src="<?= '/upload/' . $_SESSION['user']['avatar_filename'] ?>" />
 
         <div>
             <button type="submit">Valider</button>

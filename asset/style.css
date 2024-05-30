@@ -103,6 +103,29 @@ header nav ul li a:hover {
     transform: scale(1.5);
 }
 
+.helloUserParent{
+    /* position: relative; */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.imageAvatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 80px;
+    box-shadow: 4px 4px 8px #467a28, -4px -4px 8px #72d148;
+   border: 1px solid black;
+}
+
+#helloUser{
+   margin-right: 20px;
+
+}
+
 /* =================================================================== */
 
 /* #profileForm{ */

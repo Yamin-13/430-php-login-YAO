@@ -9,6 +9,12 @@ $_SESSION['msg']['error'] = [];
 
 $uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . '/upload/';
 
+// Lis les informations saisies dans le formulaire
+$fileName = $_FILES['file']['name'];
+$fileSize = $_FILES['file']['size'];
+$fileTmpName  = $_FILES['file']['tmp_name'];
+$fileType = $_FILES['file']['type'];
+
 const MY_IMG_PNG = 'image/png';
 const MY_IMG_JPG = 'image/jpeg';
 const LIST_ACCEPTED_FILE_TYPE = [MY_IMG_PNG, MY_IMG_JPG];
@@ -19,18 +25,14 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 // ...et hache le mot de passe
-$hashedPassword = password_hash($password, PASSWORD_BCRYPT ); // PASSWORD_BCRYPT ca utilise l'algorithme Blowfish qui est plus sécurisé (survole de la documentation...)
+$hashedPassword = password_hash($password, PASSWORD_BCRYPT); // PASSWORD_BCRYPT ca utilise l'algorithme Blowfish qui est plus sécurisé (survole de la documentation...)
 
 // var_dump($password); // Mp en clair
 // var_dump($hashedPassword); // Mp haché
 
 $idRole = 20; // ca donne un role pour les nouveaux utilisateurs (sampleUser)
 
-// Lis les informations saisies dans le formulaire
-$fileName = $_FILES['file']['name'];
-$fileSize = $_FILES['file']['size'];
-$fileTmpName  = $_FILES['file']['tmp_name'];
-$fileType = $_FILES['file']['type'];
+
 
 // se connecte à la base de données
 $dbConnection = getConnection($dbConfig);
@@ -71,11 +73,11 @@ function addUser($email, $password, $idRole, $db, $fileName)
 {
     $query = 'INSERT INTO user ( email, password, idRole, avatar_filename) VALUES ( :email, :password, :idRole, :avatar_filename)'; // requete SQL avec les parametres pour insérer un nouvel utilisateur dans la table...
     $statement = $db->prepare($query);   // prepare la requete SQL ele retourne un objet PDOstatement                               // ...user avec les 3 collones 
-    
+
     $statement->bindParam(':idRole', $idRole);       //  <----------------------------- // ca lie la valeeur de $idRole au parametre ":idRole" dans la requête SQL ($idRole = :idRole ) 
     $statement->bindParam(':email', $email);        // methode PDOStatement::bindParam // (sécurisé)
     $statement->bindParam(':password', $password); //                                 //
-    $statement->bindParam(':avatar_filename', $fileName); //                                 //
+    $statement->bindParam(':avatar_filename', basename($fileName), PDO::PARAM_STR);
     
     return $statement->execute();  // PDOStatement::execute (ca execute les requetes et retourne true ou false pour l'insert to) 
 
@@ -96,4 +98,3 @@ $uploadPath = $uploadDirectory . basename($fileName);
 $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
 
 // ====================================
-
