@@ -27,5 +27,4 @@ $isLoggedIn = isset($_SESSION['user']); ?>
         <a href="/ctrl/login/login.php" class="profile-icon"><img src="/asset/img/loginFlower.png" alt="Login Icon"></a>
     <?php endif; ?>
 </header>
-<script src="/asset/script/hiddenForm.js"></script>
 
