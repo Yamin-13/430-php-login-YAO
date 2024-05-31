@@ -6,7 +6,7 @@ $isLoggedIn = isset($_SESSION['user']); ?>
     <h1>Fleur de Dahlia</h1>
     <nav>
         <ul>
-            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Accsdfueil</a></li>
             <li><a href="/ctrl/login/welcome.php">Welcome</a></li>
             <li><a href="#">Nos Produits</a></li>
             

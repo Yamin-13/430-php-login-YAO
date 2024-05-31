@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="#">Accueil</a></li>
                 <li><a href="/ctrl/login/welcome.php">Welcome</a></li>
-                <li><a href="#">Nos Produits</a></li>
+                <li><a href="/ctrl/nosProduits.php">Nos Produits</a></li>
 
 
                 <?php if ($isLoggedIn && $_SESSION['user']['idRole'] == '10') : ?> <!-- cache le lien Nos secret si l'utilisateur n'a pas le role admin -->
@@ -31,7 +31,9 @@
         <?php if ($isLoggedIn) : ?>
             <div class="helloUserParent">
                 <p id="helloUser">Bonjour, <?= ($_SESSION['user']['email']) ?> </p>
-                <a href="/ctrl/profile/profile.php" class="imageAvatar"> <img src="" alt="profile" /></a><!---avatar  -->
+                <a href="/ctrl/profile/profile.php" class="imageAvatar">
+                    <p><img class="imageAvatar"  src="/upload/<?= $_SESSION['user']['avatar_filename'] ?>" /></p>
+                </a><!---avatar  -->
             </div>
 
             <a href="/ctrl/login/logout.php" class="profile-icon"><img src="/asset/img/flowerYelow-removebg-preview.png" alt="Profile Icon"></a>
