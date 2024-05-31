@@ -37,15 +37,26 @@ main {
 /* Vidéo de fond */
 #bg-video {
     position: fixed;
+    /* top: 50%;
+    left: 50%; */
+    /* min-width: 100%;
+    min-height: 100%; */
+    /* width: auto;
+    height: auto; */
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+#bg-video {
+    position: fixed;
     top: 50%;
-    left: 50%;
+    left: 50%; 
     min-width: 100%;
-    min-height: 100%;
-    width: auto;
+    min-height: 100%; 
+     width: auto;
     height: auto;
     z-index: -1;
     transform: translate(-50%, -50%);
-    background: url('/asset/img/champFleurisVideo.mp4') no-repeat;
     background-size: cover;
 }
 
@@ -116,9 +127,7 @@ header nav ul li a:hover {
 }
 
 .helloUserParent{
-    /* position: relative; */
-    
-    display: flex;
+        display: flex;
     justify-content: center;
     align-items: center;
 
@@ -140,25 +149,16 @@ header nav ul li a:hover {
 
 /* =================================================================== */
 
-/* #profileForm{ */
-/* display: none; */
-/* border: 1px solid black; */
-/* } */
 
 .formulaire {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* min-height: 100vh; */
-    /* background: #f9f9f9;  */
-    /* display: none; */
-    /* border: 1px solid rgb(230, 3, 3); */
+    
 }
 
-/* #wrapperAll{
-    display: none;
-} */
+
 
 .wrapper {
     position: relative;
@@ -172,8 +172,7 @@ header nav ul li a:hover {
     align-items: center;
     overflow: hidden;
     margin-top: 3rem;
-    /* border: 1px solid rgb(230, 3, 3); */
-    /* display: njjjjone; */
+    
 }
 
 .wrapper .text-right {
@@ -194,10 +193,6 @@ header nav ul li a:hover {
     width: 60%;
 
 }
-
-/* .form-wrapper {
-    z-index: 2;
-} */
 
 .wrapper .form-wrapper.login {
     transition: .7s ease-in-out;
@@ -251,8 +246,6 @@ h2 {
 .input-box input::placeholder {
     color: rgba(255, 255, 255, .3);
 }
-
-
 
 .forgot-pass {
     margin: -15px 0 15px 15px;
@@ -367,4 +360,21 @@ footer {
     margin-left: 10px;
     color: white;
     font-weight: 500;
+}
+
+.avatarTitle{
+    color: #467a28;
+}
+
+.produitBackroundImg{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
 }
