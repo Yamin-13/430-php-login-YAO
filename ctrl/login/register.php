@@ -68,6 +68,10 @@ if ($fileType == MY_IMG_JPG) {
 $img = imagescale($imgOriginal, 200);
 imagepng($img, $fileTmpName);
 
+// Copie aussi le fichier d'avatar dans un répertoire
+$uploadPath = $uploadDirectory . basename($fileName);
+$didUpload = move_uploaded_file($fileTmpName, $uploadPath);
+
 // Fonction pour ajouter un utilisateur à la bases de données
 function addUser($email, $password, $idRole, $db, $fileName)
 {
@@ -93,8 +97,5 @@ if (addUser($email, $hashedPassword, $idRole, $dbConnection, $fileName)) {  // A
     exit();
 }
 
-// Copie aussi le fichier d'avatar dans un répertoire
-$uploadPath = $uploadDirectory . basename($fileName);
-$didUpload = move_uploaded_file($fileTmpName, $uploadPath);
 
-// ====================================
+
