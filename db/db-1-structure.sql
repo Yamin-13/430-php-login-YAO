@@ -21,7 +21,7 @@ CREATE TABLE user (
   ,password varchar(100) NOT NULL
   ,email varchar(50) NOT NULL
   ,idRole bigint(20) NOT NULL
-    ,avatar_filename varchar(255)
+  ,avatar_filename varchar(255)
 
 )
 ;
