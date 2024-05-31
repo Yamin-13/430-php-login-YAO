@@ -12,7 +12,7 @@
 function getUser(string $email, string $password, PDO $db)
 {
     // - Prépare la requête
-    $query = 'SELECT user.id, user.email, user.password, user.idRole';
+    $query = 'SELECT user.id, user.email, user.password, user.idRole, avatar_filename';
     $query .= ' FROM user';
     $query .= ' WHERE user.email = :email ';
     $statement = $db->prepare($query);

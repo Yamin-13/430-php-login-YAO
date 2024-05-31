@@ -1,6 +1,6 @@
 <main>
     <section>
-        <h2>Avatar de <?= $user['id'] ?></h2>
-        <p><img style="border-radius: 8%;" src="data:image/png;base64,<?= base64_encode($user['avatar']) ?>" /></p>
+        <h2>Avatar de <?= $_SESSION['user']['email'] ?></h2>
+        <p><img style="border-radius: 8%;" src="/upload/<?= $_SESSION['user']['avatar_filename'] ?>" /></p>
     </section>
 </main>
