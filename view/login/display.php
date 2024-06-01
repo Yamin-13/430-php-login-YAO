@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/asset/style.css">
     <title><?= $titrePage ?></title>
 </head>
-
+ <!-- mot de passe de bob l'admin hashé : $2y$10$eO1EhZvLXRmyfB4f0tl1pe/oxTmMQJeJGblfWYSHAi.KJtNfAOm9W -->
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php'; ?>
     <main>
