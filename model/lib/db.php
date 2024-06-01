@@ -23,7 +23,7 @@ function getConnection(array $params) : PDO
 // $params = [
 //     'host' => 'localhost'
 //     ,'port' => '4000'
-//     , 'dbname' => '430-php-login'
+//     , 'dbname' => '430-php-login-YAO'
 //     ,'user' => 'root'
 //     ,'password' => '' 
 // ];

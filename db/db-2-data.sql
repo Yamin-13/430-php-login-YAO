@@ -8,7 +8,7 @@ INSERT INTO role (id, code, label ) VALUES
 
 INSERT INTO user (id, idRole, password, email) VALUES
    
-    (110, 10, 'bob', 'bob')   ---> mot de passe de bob l'admin hashé : $2y$10$eO1EhZvLXRmyfB4f0tl1pe/oxTmMQJeJGblfWYSHAi.KJtNfAOm9W
+    (110, 10, 'bob', 'bob')   
 ;
 
 SELECT user.email, role.code
